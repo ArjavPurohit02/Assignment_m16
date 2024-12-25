@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Basket Grocery Store</title>
+    <!-- Bootstrap CSS -->
+    ------<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        .navbar {
+            background-color: #5cb85c;
+        }
+        .navbar-brand {
+            color: white !important;
+        }
+        .category-section {
+            padding: 50px 0;
+            background-color: #f8f9fa;
+        }
+        .product-box {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+            background-color: #fff;
+        }
+        .product-box img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .cart {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #f1c40f;
+            padding: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            color: white;
+            font-size: 18px;
+        }
+        .cart-items {
+            list-style: none;
+            padding: 0;
+        }
+        .cart-items li {
+            margin-bottom: 10px;
+        }
+        .checkout-section {
+            padding: 50px 0;
+        }
+        .hidden {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="Big Basket Grocery Store">Big Basket Grocery Store </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#categories">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#checkout">Checkout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Category Section -->
+    <section id="categories" class="category-section text-center">
+        <div class="container">
+            <h2>Shop by Category</h2>
+            <div class="row mt-4">
+                <div class="col-md-2">
+                    <button class="btn btn-outline-success w-100 category-btn" data-category="all">All</button>
+                </div>
+
+                <div class="col-md-2">
+                    <button class="btn btn-outline-success w-100 category-btn" data-category="vegetables">Vegetables</button>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-outline-success w-100 category-btn" data-category="fruits">Fruits</button>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-outline-success w-100 category-btn" data-category="dairy">Dairy</button>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-outline-success w-100 category-btn" data-category="snacks">Snacks</button>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-outline-success w-100 category-btn" data-category="chocolates">Chocolates</button>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-outline-success w-100 category-btn" data-category="beverages">Beverages</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section id="products" class="text-center py-5">
+        <div class="container">
+            <h2>Featured Products</h2>
+            <div class="row mt-4" id="product-list">
+                <!-- Vegetables -->
+                <div class="col-md-3 product-item" data-category="vegetables">
+                    <div class="product-box">
+                        <img src="Tometo.jpg" alt="Tomato">
+                        <h4>Tomato (1kg)</h4>
+                        <p>Price: ₹40</p>
+                        <button class="btn btn-success add-to-cart" data-name="Tomato" data-price="40" data-quantity="1">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3 product-item" data-category="vegetables">
+                    <div class="product-box">
+                        <img src="Potato.jpg" alt="Potato">
+                        <h4>Potato (1kg)</h4>
+                        <p>Price: ₹30</p>
+                        <button class="btn btn-success add-to-cart" data-name="Potato" data-price="30">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3 product-item" data-category="vegetables">
+                    <div class="product-box">
+                        <img src="Onion.jpg" alt="Onion">
+                        <h4>Onion (1kg)</h4>
+                        <p>Price: ₹35</p>
+                        <button class="btn btn-success add-to-cart" data-name="Onion" data-price="35">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3 product-item" data-category="vegetables">
+                    <div class="product-box">
+                        <img src="Carrot.jpg" alt="Carrot">
+                        <h4>Carrot (1kg)</h4>
+                        <p>Price: ₹60</p>
+                        <button class="btn btn-success add-to-cart" data-name="Carrot" data-price="60">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3 product-item" data-category="vegetables">
+                    <div class="product-box">
+                        <img src="Brocoli.jpg" alt="Broccoli">
+                        <h4>Broccoli (500g)</h4>
+                        <p>Price: ₹70</p>
+                        <button class="btn btn-success add-to-cart" data-name="Broccoli" data-price="70">Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Fruits -->
+                <div class="col-md-3 product-item" data-category="fruits">
+                    <div class="product-box">
+                        <img src="Apple.jpg" alt="Apple">
+                        <h4>Apple (1kg)</h4>
+                        <p>Price: ₹100</p>
+                        <button class="btn btn-success add-to-cart" data-name="Apple" data-price="100">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3 product-item" data-category="fruits">
+                    <div class="product-box">
+                        <img src="Banana.jpg" alt="Banana">
+                        <h4>Banana (1 Dozen)</h4>
+                        <p>Price: ₹50</p>
+                        <button class="btn btn-success add-to-cart" data-name="Banana" data-price="50">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3 product-item" data-category="fruits">
+                    <div class="product-box">
+                        <img src="Mango.jpg" alt="Mango">
+                        <h4>Mango (1kg)</h4>
+                        <p>Price: ₹150</p>
+                        <button class="btn btn-success add-to-cart" data-name="Mango" data-price="150">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3 product-item" data-category="fruits">
+                    <div class="product-box">
+                        <img src="Orange.jpg" alt="Orange">
+                        <h4>Orange (1kg)</h4>
+                        <p>Price: ₹80</p>
+                        <button class="btn btn-success add-to-cart" data-name="Orange" data-price="80">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3 product-item" data-category="fruits">
+                    <div class="product-box">
+                        <img src="Watermelon.jpg" alt="Watermelon">
+                        <h4>Watermelon (1kg)</h4>
+                        <p>Price: ₹100</p>
+                        <button class="btn btn-success add-to-cart" data-name="Watermelon" data-price="100">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Dairy -->
+                <div class="col-md-3 product-item" data-category="dairy">
+                    <div class="product-box">
+                        <img src="Milk.jpg" alt="Milk">
+                        <h4>Milk (500ml)</h4>
+                        <p>Price: ₹35</p>
+                        <button class="btn btn-success add-to-cart" data-name="Milk" data-price="35">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3 product-item" data-category="dairy">
+                    <div class="product-box">
+                        <img src="Butter.jpg" alt="Butter">
+                        <h4>Butter (200g)</h4>
+                        <p>Price: ₹60</p>
+                        <button class="btn btn-success add-to-cart" data-name="Butter" data-price="60">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3 product-item" data-category="dairy">
+                    <div class="product-box">
+                        <img src="Cheese.jpg" alt="Cheese">
+                        <h4>Cheese (200g)</h4>
+                        <p>Price: ₹80</p>
+                        <button class="btn btn-success add-to-cart" data-name="Cheese" data-price="80">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3 product-item" data-category="dairy">
+                    <div class="product-box">
+                        <img src="Yogurt.jpg" alt="Yogurt">
+                        <h4>Yogurt (500g)</h4>
+                        <p>Price: ₹30</p>
+                        <button class="btn btn-success add-to-cart" data-name="Yogurt" data-price="30">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3 product-item" data-category="dairy">
+                    <div class="product-box">
+                        <img src="Panner.jpg" alt="Paneer">
+                        <h4>Paneer (250g)</h4>
+                        <p>Price: ₹90</p>
+                        <button class="btn btn-success add-to-cart" data-name="Paneer" data-price="90">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Snacks -->
+                <div class="col-md-3 product-item" data-category="snacks">
+                    <div class="product-box">
+                        <img src="Lays.jpg" alt="Lays Chips">
+                        <h4>Lays Chips</h4>
+                        <p>Price: ₹20</p>
+                        <button class="btn btn-success add-to-cart" data-name="Lays Chips" data-price="20">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3 product-item" data-category="snacks">
+                    <div class="product-box">
+                        <img src="Kurkure.jpg" alt="Kurkure">
+                        <h4>Kurkure</h4>
+                        <p>Price: ₹15</p>
+                        <button class="btn btn-success add-to-cart" data-name="Kurkure" data-price="15">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3 product-item" data-category="snacks">
+                    <div class="product-box">
+                        <img src="Oreo.jpg" alt="Oreo">
+                        <h4>Oreo</h4>
+                        <p>Price: ₹30</p>
+                        <button class="btn btn-success add-to-cart" data-name="Oreo" data-price="30">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3 product-item" data-category="snacks">
+                    <div class="product-box">
+                        <img src="Dahi Papdi.jpg" alt="Dahi Papdi">
+                        <h4>Dahi Papdi</h4>
+                        <p>Price: ₹40</p>
+                        <button class="btn btn-success add-to-cart" data-name="Dahi Papdi" data-price="40">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3 product-item" data-category="snacks">
+                    <div class="product-box">
+                        <img src="Bingo.jpg" alt="Bingo">
+                        <h4>Bingo</h4>
+                        <p>Price: ₹25</p>
+                        <button class="btn btn-success add-to-cart" data-name="Bingo" data-price="25">Add to Cart</button>
+                    </div>
+                </div>
+                     <!-- Chocolates -->
+                <div class="col-md-3 product-item" data-category="chocolates">
+                    <div class="product-box">
+                        <img src="Dairy Milk.jpg" alt="Dairy Milk">
+                        <h4>Dairy Milk (60g)</h4>
+                        <p>Price: ₹40</p>
+                        <button class="btn btn-success add-to-cart" data-name="Dairy Milk" data-price="40">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3 product-item" data-category="chocolates">
+                    <div class="product-box">
+                        <img src="Kit Kat.jpg" alt="KitKat">
+                        <h4>KitKat (50g)</h4>
+                        <p>Price: ₹25</p>
+                        <button class="btn btn-success add-to-cart" data-name="KitKat" data-price="25">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3 product-item" data-category="chocolates">
+                    <div class="product-box">
+                        <img src="Snikers.jpg" alt="Snickers">
+                        <h4>Snickers (45g)</h4>
+                        <p>Price: ₹30</p>
+                        <button class="btn btn-success add-to-cart" data-name="Snickers" data-price="30">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3 product-item" data-category="chocolates">
+                    <div class="product-box">
+                        <img src="Mars.jpg" alt="Mars">
+                        <h4>Mars (50g)</h4>
+                        <p>Price: ₹35</p>
+                        <button class="btn btn-success add-to-cart" data-name="Mars" data-price="35">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3 product-item" data-category="chocolates">
+                    <div class="product-box">
+                        <img src="5-Star.jpg" alt="5-star">
+                        <h4>5-star (100g)</h4>
+                        <p>Price: ₹60</p>
+                        <button class="btn btn-success add-to-cart" data-name="5-star" data-price="60">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Beverages -->
+                <div class="col-md-3 product-item" data-category="beverages">
+                    <div class="product-box">
+                        <img src="Fanta.jpg" alt="fenta">
+                        <h4>fenta (250ml)</h4>
+                        <p>Price: ₹70</p>
+                        <button class="btn btn-success add-to-cart" data-name="fenta" data-price="70">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3 product-item" data-category="beverages">
+                    <div class="product-box">
+                        <img src="mirinda.jpg" alt="Mirinda">
+                        <h4>Mirinda (1L)</h4>
+                        <p>Price: ₹90</p>
+                        <button class="btn btn-success add-to-cart" data-name="Mirinda" data-price="90">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3 product-item" data-category="beverages">
+                    <div class="product-box">
+                        <img src="Coke.jpg" alt="Coke">
+                        <h4>Coke (1L)</h4>
+                        <p>Price: ₹50</p>
+                        <button class="btn btn-success add-to-cart" data-name="Coke" data-price="50">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3 product-item" data-category="beverages">
+                    <div class="product-box">
+                        <img src="7Up.jpg" alt="7 Up">
+                        <h4>7 Up (1L)</h4>
+                        <p>Price: ₹50</p>
+                        <button class="btn btn-success add-to-cart" data-name="7 Up" data-price="50">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3 product-item" data-category="beverages">
+                    <div class="product-box">
+                        <img src="Red Bull.jpg" alt="Red Bull">
+                        <h4>Red Bull (250ml)</h4>
+                        <p>Price: ₹100</p>
+                        <button class="btn btn-success add-to-cart" data-name="Red Bull" data-price="100">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart -->
+    <div class="cart" id="cart-icon">
+        🛒 Cart (<span id="cart-count">0</span>)
+    </div>
+
+    <!-- Checkout Section -->
+    <section id="checkout" class="checkout-section text-center">
+        <div class="container">
+            <h2>Checkout</h2>
+            <ul id="cart-items" class="cart-items"></ul>
+            <button class="btn btn-warning">Proceed to Checkout</button>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS and custom script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let cart = [];
+        const cartCount = document.getElementById('cart-count');
+        const cartItems = document.getElementById('cart-items');
+        const productItems = document.querySelectorAll('.product-item');
+
+        // Add to cart functionality
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const productName = button.getAttribute('data-name');
+                const productPrice = button.getAttribute('data-price');
+                cart.push({ name: productName, price: productPrice });
+                updateCart();
+            });
+        });
+
+        function updateCart() {
+            cartCount.textContent = cart.length;
+            cartItems.innerHTML = '';
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.name} - ₹${item.price}`;
+                cartItems.appendChild(li);
+            });
+        }
+
+        // Filter by category
+        document.querySelectorAll('.category-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.getAttribute('data-category');
+                productItems.forEach(item => {
+                    if (item.getAttribute('data-category') === category || category === 'all') {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        const products = document.querySelectorAll('.product-item');
+
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const category = this.getAttribute('data-category');
+
+                products.forEach(product => {
+                    if (category === 'all') {
+                        // Show all products if 'All' is clicked
+                        product.style.display = 'block';
+                    } else if (product.getAttribute('data-category') === category) {
+                        // Show products of selected category
+                        product.style.display = 'block';
+                    } else {
+                        // Hide other products
+                        product.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+
+    // Add to cart functionality
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+        const productName = button.getAttribute('data-name');
+        const productPrice = button.getAttribute('data-price');
+        const productQuantity = button.getAttribute('data-quantity') || 1;
+
+        // Check if product is already in cart
+        const existingProduct = cart.find(item => item.name === productName);
+        if (existingProduct) {
+            existingProduct.quantity = (existingProduct.quantity || 1) + 1;
+        } else {
+            cart.push({ name: productName, price: productPrice, quantity: 1 });
+        }
+
+        updateCart();
+    });
+});
+
+function updateCart() {
+    cartCount.textContent = cart.reduce((total, item) => total + item.quantity, 0);
+    cartItems.innerHTML = '';
+    cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} x ${item.quantity} - ₹${item.price * item.quantity}`;
+        cartItems.appendChild(li);
+    });
+}
+</script>
+
+
+
+</body>
+</html>
+
+
+<!-- 
+When Clicking on proceed to checkout add a payment section to make a payment by upi or card or cod then make a delivery address and all    -->
